@@ -23,7 +23,7 @@
 // se realiza una operación inversa para deshacer el cifrado original y recuperar el mensaje original.
 
 
-//*      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+//*      A B C D E F G H I J K L M N O P Q R S T U V W X Y Z   *MENSAJE
 // -----------------------------------------------------------
 //  A  | A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 //  B  | B C D E F G H I J K L M N O P Q R S T U V W X Y Z A
@@ -51,15 +51,29 @@
 //  X  | X Y Z A B C D E F G H I J K L M N O P Q R S T U V W
 //  Y  | Y Z A B C D E F G H I J K L M N O P Q R S T U V W X
 //  Z  | Z A B C D E F G H I J K L M N O P Q R S T U V W X Y
+//*clave
 
 
-//* MENSAJE PRUEBA: AMIGA     PALABRA CLAVE: ABCDE      CIFRADO: ANKJE       DESCIFRADO: ALGDW
-// A:                       A:
-// M:                       B:
-// I:                       C:          
-// G:                       D:
-// A:                       E:
 
+//* MENSAJE PRUEBA: AMIGA COMO    PALABRA CLAVE: ABCDE ABCDn      CIFRADO: ANKJE       DESCIFRADO: AMIGA
+// A:                       A:      A
+// M:                       B:      N
+// I:                       C:      K   
+// G:                       D:      J
+// A:                       E:      E
+
+
+// C:                       A:      C
+// O:                       B:      P
+// M:                       C:      O
+// O:                       D:      R
+
+
+// E:                       E:      
+// S:                       A:      
+// T:                       B:      
+// A:                       C:
+// S:                       D:      
 
 
 
@@ -74,12 +88,14 @@ function vigenereCipher(message, key) {
     // Recorrer cada carácter del mensaje
     for (let i = 0, j = 0; i < message.length; i++) {
         let currentChar = message.charCodeAt(i);
-
+            console.log(currentChar);
         // Solo cifrar letras del alfabeto, ignorar espacios y otros caracteres
         if (currentChar >= 65 && currentChar <= 90) {
             // Aplicar el desplazamiento
             let shift = key.charCodeAt(j) - 65; // Obtener el valor de desplazamiento de la clave
+            console.log(shift);
             let encryptedChar = String.fromCharCode(((currentChar - 65 + shift) % 26) + 65);
+            console.log(encryptedChar);
             encryptedMessage += encryptedChar;
 
             // Mover al siguiente carácter de la clave circularmente
