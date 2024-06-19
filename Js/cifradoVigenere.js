@@ -166,3 +166,11 @@ function decryptMessage() {
     let decryptedText = vigenereDecipher(message, key);
     document.getElementById('result').value = decryptedText;
 }
+function copiarTexto() {
+    var textoCopiar = document.getElementById("result").value;
+    navigator.clipboard.writeText(textoCopiar).then(function() {
+        alert("Texto copiado: " + textoCopiar);
+    }, function(err) {
+        console.error("Error al copiar el texto: ", err);
+    });
+}

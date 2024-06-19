@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIFRAR</title>
+    <link rel="stylesheet" href="/cifradoVigenere/Css/style.css">
+</head>
+
+<body>
+    <div class="principal">
+        <div class="marca">
+            <h2 class="tituloMarca">top secret</h2>
+        </div>
+        <div class="contenedor">
+            <h1 class="titulo">CIFRAR</h1>
+            <p class="informacion"> Escribe tu mensaje y una clave secreta para que solo tus amigos y tu conoscan el texto.</p>
+            <br>
+            <a href="/cifradoVigenere/index.html" id="buttonCategorias" class="boton">Volver a la pagina principal</a>
+            <div class="columns">
+                <div class="texto">
+                    <label for="message">Mensaje:</label><br />
+                    <textarea id="message" placeholder="Escribe tu mensaje..."></textarea>
+                    <br />
+                    <label for="key">Clave:</label><br />
+                    <input type="text" id="key" placeholder="Ingrese la clave secreta..." />
+                    <button onclick="decryptMessage()">Cifrar mensaje</button>
+                </div>
+                <div class="Resultado">
+                    <label for="result">Mensaje Secreto:</label><br />
+                    <textarea id="result" readonly></textarea>
+                    <br />
+                    <button type="button" onclick="copiarTexto()">Copiar</button>                  
+                </div>
+            </div>
+        </div>
+        <script src="/cifradoVigenere/Js/cifradoVigenere.js"></script>
+</body>
+
+</html>
