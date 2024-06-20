@@ -1,14 +1,74 @@
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    background-image: url(/cifradoVigenere/Archivos/fon.jpg) ;
+    background-color: black;
+    color: #00FF00; /* Verde brillante */
+    font-family: 'Courier New', Courier, monospace; /* Fuente de consola */
+    text-align: center;
 }
-textarea {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 10px;
+
+h1, h2 {
+    color: #00FF00;
+    text-shadow: 0 0 5px #00FF00;
+    text-align: center;
 }
-button {
+
+a.boton, button {
+    background-color: black;
+    color: #00FF00;
+    border: 2px solid #00FF00;
     padding: 10px 20px;
-    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a.boton:hover, button:hover {
+    background-color: #00FF00;
+    color: black;
+}
+
+a.boton:active, button:active {
+    box-shadow: 0 0 10px #00FF00 inset;
+}
+
+textarea, input[type="text"] {
+    background-color: black;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    padding: 10px;
+}
+
+label {
+    color: #00FF00;
+}
+
+.principal {
+    padding: 20px;
+}
+
+.marca {
+    margin-bottom: 20px;
+}
+
+.contenedor {
+    background-color: #111111;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+button {
     cursor: pointer;
+}
+
+.columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.texto, .Resultado {
+    width: 48%;
 }
